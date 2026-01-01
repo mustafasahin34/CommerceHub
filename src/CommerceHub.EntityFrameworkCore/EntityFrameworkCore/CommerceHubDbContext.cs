@@ -4,6 +4,7 @@ using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Identity;
 using Volo.Abp.Identity.EntityFrameworkCore;
@@ -12,6 +13,8 @@ using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using CommerceHub;
+
 
 namespace CommerceHub.EntityFrameworkCore;
 
@@ -53,6 +56,20 @@ public class CommerceHubDbContext :
 
     #endregion
 
+    // CommerceHub Entities
+    
+    // CommerceHub Entities
+    
+    // CommerceHub Entities
+    
+    // CommerceHub Entities
+    
+    public DbSet<CommerceHub.Entities.Category> Categories { get; set; }
+    public DbSet<CommerceHub.Entities.Product> Products { get; set; }
+    public DbSet<CommerceHub.Entities.Order> Orders { get; set; }
+    public DbSet<CommerceHub.Entities.OrderItem> OrderItems { get; set; }
+     
+
     public CommerceHubDbContext(DbContextOptions<CommerceHubDbContext> options)
         : base(options)
     {
@@ -76,11 +93,39 @@ public class CommerceHubDbContext :
 
         /* Configure your own tables/entities inside here */
 
-        //builder.Entity<YourEntity>(b =>
-        //{
-        //    b.ToTable(CommerceHubConsts.DbTablePrefix + "YourEntities", CommerceHubConsts.DbSchema);
-        //    b.ConfigureByConvention(); //auto configure for the base class props
-        //    //...
-        //});
+        builder.Entity<CommerceHub.Entities.Category>(b =>
+        {
+            b.ToTable(CommerceHubConsts.DbTablePrefix + "Categories", CommerceHubConsts.DbSchema);
+            b.ConfigureByConvention();
+            b.Property(x => x.Name).IsRequired().HasMaxLength(128);
+            b.Property(x => x.Slug).IsRequired().HasMaxLength(128);
+            b.HasIndex(x => x.Slug);
+        });
+
+        builder.Entity<CommerceHub.Entities.Product>(b =>
+        {
+            b.ToTable(CommerceHubConsts.DbTablePrefix + "Products", CommerceHubConsts.DbSchema);
+            b.ConfigureByConvention();
+            b.Property(x => x.Name).IsRequired().HasMaxLength(128);
+            b.Property(x => x.Price).HasColumnType("decimal(18,2)");
+            // Relations
+            b.HasOne<CommerceHub.Entities.Category>().WithMany().HasForeignKey(x => x.CategoryId).IsRequired();
+        });
+
+        builder.Entity<CommerceHub.Entities.Order>(b =>
+        {
+            b.ToTable(CommerceHubConsts.DbTablePrefix + "Orders", CommerceHubConsts.DbSchema);
+            b.ConfigureByConvention();
+            b.Property(x => x.TotalAmount).HasColumnType("decimal(18,2)");
+            b.HasMany(x => x.Items).WithOne().HasForeignKey(x => x.OrderId).IsRequired();
+        });
+
+        builder.Entity<CommerceHub.Entities.OrderItem>(b =>
+        {
+            b.ToTable(CommerceHubConsts.DbTablePrefix + "OrderItems", CommerceHubConsts.DbSchema);
+            b.ConfigureByConvention();
+            b.Property(x => x.UnitPrice).HasColumnType("decimal(18,2)");
+            b.Property(x => x.TotalPrice).HasColumnType("decimal(18,2)");
+        });
     }
 }

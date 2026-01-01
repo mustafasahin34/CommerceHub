@@ -1,0 +1,35 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CommerceHub.Application.Contracts/CommerceHub.Application.Contracts.csproj" />
+    <Project Path="src/CommerceHub.Application/CommerceHub.Application.csproj" />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <Project Path="src/CommerceHub.DbMigrator/CommerceHub.DbMigrator.csproj" />
+    <Project Path="src/CommerceHub.Domain.Shared/CommerceHub.Domain.Shared.csproj" />
+    <Project Path="src/CommerceHub.Domain/CommerceHub.Domain.csproj" />
+    <Project Path="src/CommerceHub.EntityFrameworkCore/CommerceHub.EntityFrameworkCore.csproj" />
+    <Project Path="src/CommerceHub.HttpApi.Client/CommerceHub.HttpApi.Client.csproj" />
+    
+    
+    <Project Path="src/CommerceHub.HttpApi/CommerceHub.HttpApi.csproj" />
+    
+    
+    <Project Path="src/CommerceHub.Web/CommerceHub.Web.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/CommerceHub.Application.Tests/CommerceHub.Application.Tests.csproj" />
+    <Project Path="test/CommerceHub.Domain.Tests/CommerceHub.Domain.Tests.csproj" />
+    <Project Path="test/CommerceHub.EntityFrameworkCore.Tests/CommerceHub.EntityFrameworkCore.Tests.csproj" />
+    <Project Path="test/CommerceHub.HttpApi.Client.ConsoleTestApp/CommerceHub.HttpApi.Client.ConsoleTestApp.csproj" />
+    
+    <Project Path="test/CommerceHub.TestBase/CommerceHub.TestBase.csproj" />
+    <Project Path="test/CommerceHub.Web.Tests/CommerceHub.Web.Tests.csproj" />
+  </Folder>
+</Solution>

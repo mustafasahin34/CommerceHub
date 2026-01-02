@@ -1,0 +1,10 @@
+C:\Users\Musta\Desktop\CommerceHub\src\CommerceHub.Application\CommerceHubApplicationMappers.cs(10,5): error RMG013: CommerceHub.Entities.Category has no accessible constructor with mappable arguments [C:\Users\Musta\Desktop\CommerceHub\src\CommerceHub.Application\CommerceHub.Application.csproj]
+C:\Users\Musta\Desktop\CommerceHub\src\CommerceHub.Application\CommerceHubApplicationMappers.cs(13,5): error RMG013: CommerceHub.Entities.Product has no accessible constructor with mappable arguments [C:\Users\Musta\Desktop\CommerceHub\src\CommerceHub.Application\CommerceHub.Application.csproj]
+C:\Users\Musta\Desktop\CommerceHub\src\CommerceHub.Application\obj\Debug\net10.0\Riok.Mapperly\Riok.Mapperly.MapperGenerator\CommerceHubApplicationMappers.g.cs(25,30): error CS0122: 'Category.Category()' ├Â─şesine koruma d├╝zeyi nedeniyle eri┼şilemiyor [C:\Users\Musta\Desktop\CommerceHub\src\CommerceHub.Application\CommerceHub.Application.csproj]
+C:\Users\Musta\Desktop\CommerceHub\src\CommerceHub.Application\obj\Debug\net10.0\Riok.Mapperly\Riok.Mapperly.MapperGenerator\CommerceHubApplicationMappers.g.cs(53,30): error CS0122: 'Product.Product()' ├Â─şesine koruma d├╝zeyi nedeniyle eri┼şilemiyor [C:\Users\Musta\Desktop\CommerceHub\src\CommerceHub.Application\CommerceHub.Application.csproj]
+
+Olu┼şturma BA┼ŞARISIZ OLDU.
+    17 Uyar─▒
+    4 Hata
+
+Ge├ğen S├╝re 00:00:01.05

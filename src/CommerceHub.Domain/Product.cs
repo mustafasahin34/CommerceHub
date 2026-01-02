@@ -12,7 +12,7 @@ public class Product : AuditedAggregateRoot<Guid>
     public int StockQuantity { get; set; }
     public string TechnicalSpecs { get; set; } // JSON or simple text
 
-    protected Product()
+    public Product()
     {
     }
 

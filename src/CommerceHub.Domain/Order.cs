@@ -1,17 +1,11 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Domain.Entities.Auditing;
+using CommerceHub.Orders;
 
 namespace CommerceHub.Entities;
 
-public enum OrderStatus
-{
-    Pending,
-    Processing,
-    Shipped,
-    Completed,
-    Cancelled
-}
+
 
 public class Order : AuditedAggregateRoot<Guid>
 {

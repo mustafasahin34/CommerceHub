@@ -9,7 +9,7 @@ public class Category : AuditedAggregateRoot<Guid>
     public string Slug { get; set; }
     public Guid? ParentId { get; set; }
 
-    protected Category()
+    public Category()
     {
     }
 
